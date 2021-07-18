@@ -1,0 +1,24 @@
+{
+  "name": "http-studying",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon javascript/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusGardin/NodeFirstSteps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusGardin/NodeFirstSteps/issues"
+  },
+  "homepage": "https://github.com/MatheusGardin/NodeFirstSteps#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

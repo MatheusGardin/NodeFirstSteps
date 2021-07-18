@@ -1,7 +1,24 @@
 const http = require('http')
+const fs = require('fs')
+const path = require('path')
 
 http.createServer((req, res) => {
-    req.url === '/' ? res.end('<h1>HomePage</h1>') : res.end('<h1>AnotherPage</h1>')
+    
+    const file = req.url === '/' ? 'index.html' : req.url
+    const filePath = path.join('public', file)
+    const extName = path.extname(filePath)
 
-    return
-}).listen(3000, () => console.log(`Server running at http://${'127.0.0.1'}:${3000}/`))
+    const allowedFileTypes = ['.html', '.css', '.js']
+    const allowed = allowedFileTypes.find(item => item == extName)
+
+    if (!allowed) return 
+
+    fs.readFile(
+        filePath, 
+        (err, content) => {
+            if (err) throw err
+
+            res.end(content)
+        }
+    )
+}).listen(3000, () => console.log(`Server running at http://${'127.0.0.1'}:${3000}`))
