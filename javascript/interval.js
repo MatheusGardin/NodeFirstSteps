@@ -17,5 +17,6 @@ setInterval(() => {
     console.clear()
     console.log(' ====== PC STATS ======')
     console.table(stats)
-    console.log('Running...')
+    
+    log(`${JSON.stringify(stats)}\n`)
 }, 1000) 
